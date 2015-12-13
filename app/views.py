@@ -70,3 +70,9 @@ def after_login(resp):
 @app.before_request
 def before_request():
     g.user = current_user
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
